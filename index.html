@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>chou-chou HAIR</title>
+        <meta name="description" content="美容室">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--リセットCSS-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+        <header>
+            <h3>chou-chou HAIR</h3>
+            <div class="slider">
+                <img src="images/shop.jpg.jpeg" class="slide active">
+                <img src="images/shop2.jpg.jpeg" class="slide">
+                <img src="images/shop3.jpg.jpeg" class="slide">
+                <img src="images/shop4.jpg.jpeg" class="slide">
+            </div>
+
+            <!-- ボタン -->
+             <button class="prev" onclick="prevSlide()"><</button>
+             <button class="next" onclick="nextSlide()">></button>
+        </header>
+        <section class="hero">
+            <h2>自然体で、美しく。</h2>
+            <P class="sub">美容師歴20年以上<br>
+            女性スタイリストが最初から最後まで丁寧に担当します。</P>
+
+            <nav>
+            <a href="index.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="access.html">ACCESS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        </section>
+        
+
+        <footer class="page-footer">
+            <h3 class="heading-large font-english"></h3>
+            <table class="info">
+                    <tr>
+                        <th>住所</th>
+                        <td>大阪府大阪市福島区大開3-4-28-107</td>
+                    </tr>
+                    <tr>
+                        <th>電話</th>
+                        <td>080-2475-4413</td>
+                    </tr>
+                    <tr>
+                        <th>OPEN</th>
+                        <td>9:30~18:00<br>
+                        (受付17:00迄)</td>
+                    </tr>
+                    <tr>
+                        <th>CLOSE</th>
+                        <td>毎週月曜日<br>
+                        第3火曜日</td>
+                    </tr>      
+                </table>
+
+            <div class="copyrigt">
+                <small>&copy; chou-chou HAIR</small>
+            </div>
+        </footer>
+        </main>
+    </body>
+</html>
+
+<script>
+    let slides = document.querySelectorAll(".slide");
+    let index = 0
+
+    function showSlide() {
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[index].classList.add("active");
+
+        index++;
+        if (index >=slides.length) {
+            index = 0
+        }
+    }
+
+    setInterval(showSlide, 3000); // 3秒ごとに切り替え
+</script>
