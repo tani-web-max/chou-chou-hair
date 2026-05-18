@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 /* 全体 */
+
 body {
     margin: 0;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Zen Kaku Gothic New", sans-serif;
     text-align: center;
     color: #333;
     background: #e9dfd2;
@@ -131,12 +132,10 @@ nav a {
 
     border-radius: 10px;
 
-    transition: 0.3s;
+    transition: all 0.3s ease;
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
-
-
 
 /* ホバー */
 nav a:hover {
@@ -170,7 +169,7 @@ nav a:hover {
 
     text-align: center;
 
-    padding: 2rem 0;
+    padding: 1rem 0;
     margin-top: 5rem;
 
     color: #333;
@@ -196,6 +195,8 @@ iframe {
     text-decoration: none;
 
     border-radius: 8px;
+
+    transition: all 0.3s ease;
 }
 
 /* 電話 hover */
@@ -225,14 +226,38 @@ h2 {
     margin: 30px auto;
 }
 
+/* メニュー一覧 */
+.menu-list {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+/* 1行 */
 .menu-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
-    padding: 15px 10px;
+    gap: 20px;
+
+    padding: 20px 10px;
 
     border-bottom: 1px solid #ddd;
+
     font-size: 16px;
+}
+
+/* 左側 */
+.menu-name {
+    text-align: left;
+    line-height: 1.9;
+}
+
+/* 右側 */
+.menu-price {
+    text-align: right;
+    white-space: nowrap;
+    line-height: 1.9;
 }
 
 .menu-item:last-child {
@@ -257,7 +282,23 @@ h2 {
     font-size: 16px;
     letter-spacing: 1px;
 
-    transition: 0.3s;
+    transition: all 0.3s ease;
+}
+
+.page-title {
+    font-size: 18px;
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.price-note {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
 }
 
 /* ホバー */
@@ -274,8 +315,8 @@ h2 {
     }
 
     main {
-        margin: 15px;
-        padding: 25px 15px;
+    margin: 15px;
+    padding: 25px 20px;
     }
 
     h5 {
@@ -305,28 +346,21 @@ h2 {
         padding: 10px 14px;
         font-size: 14px;
     }
-
-    /* スマホ メニュー調整 */
-.menu-item {
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 8px;
 }
 
-.menu-item span:last-child {
-    align-self: flex-end;
+@media screen and (max-width: 768px) {
 
-    text-align: right;
-}
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
 
-.menu-item {
-    font-size: 15px;
-    line-height: 1.6;
-}
+        gap: 8px;
 
-main {
-    margin: 10px;
-    padding: 20px 12px;
-}
+        padding: 18px 5px;
+    }
+
+    .menu-price {
+        width: 100%;
+        text-align: right;
+    }
 }
